@@ -6,7 +6,7 @@
 /*   By: alemarch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 09:18:21 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/17 13:37:53 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/17 15:39:30 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ int	ft_strlen(char *str)
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	int				src_len;
 	unsigned int	i;
 
-	src_len = ft_strlen(src);
+	i = 0;
 	while (src[i] != '\0' && i < size - 1)
 	{
 		dest[i] = src[i];
@@ -36,5 +35,5 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 		dest[i] = '\0';
 		i++;
 	}
-	return (src_len);
+	return (i);
 }

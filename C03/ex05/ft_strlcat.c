@@ -6,7 +6,7 @@
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 14:12:11 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/16 21:31:10 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/17 15:37:00 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 		i++;
 	}
 	dest[dest_len + i] = '\0';
-	return (dest_len + ft_strlen(src));
+	return (i);
 }
