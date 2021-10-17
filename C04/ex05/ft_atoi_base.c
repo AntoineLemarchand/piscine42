@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/16 19:54:58 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/17 12:39:38 by alemarch         ###   ########.fr       */
+/*   Created: 2021/10/17 12:43:07 by alemarch          #+#    #+#             */
+/*   Updated: 2021/10/17 13:58:51 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
-
-void	ft_putchar(char c)
+int	ft_is_negative(char *str)
 {
-	write(1, &c, 1);
-}
+	int	i;
+	int	sign;
 
-int	ft_strlen(char *str)
-{
-	int	i = 0;
-
-	while (str[i])
+	i = 0;
+	sign = 0;
+	while (str[i] > '9' || str[i] < '0')
+	{
+		if (str[i] == '-')
+		{
+			sign++;
+		}
 		i++;
-	return (i);
+	}
+	return (i % 2);
 }
 
 int	ft_is_valid(char *str)
@@ -52,21 +54,24 @@ int	ft_is_valid(char *str)
 	return (1);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+int ft_atoi_base(char *str, char *base)
 {
-	unsigned int	n;
+	int				i;
+	unsigned int	out;
 
+	i = 0;
+	out = 0;
 	if (ft_is_valid(base))
 	{
-		if (nbr < 0)
+		while (str[i] < '0' || str[i] > '9')
+			i++;
+		while (str[i] >= '0' && str[i] <= '9')
 		{
-			ft_putchar('-');
-			n = -nbr;
+			out = ((out * 10) + (str[i] - 48);
+			i++;
 		}
-		else
-			n = nbr;
-		if (n > 9)
-			ft_putnbr_base(n / ft_strlen(base), base);
-		ft_putchar(base[n % ft_strlen(base)]);
+		if (ft_is_negative(str))
+			out *= -1;
 	}
+	return (out);
 }

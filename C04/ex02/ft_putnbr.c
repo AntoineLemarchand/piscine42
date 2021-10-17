@@ -6,7 +6,7 @@
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 15:44:22 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/16 20:56:37 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/17 10:21:29 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void	ft_putnbr(int nb)
 	else
 		n = nb;
 	if (n > 9)
-	{
 		ft_putnbr(n / 10);
-	}
 	ft_putchar(n % 10 + 48);
 }

@@ -6,7 +6,7 @@
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 14:17:29 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/16 21:29:46 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/17 13:42:48 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strcat(char *dest, char *src)
 	int	dest_len;
 	int	i;
 
-	dest_len = ft_strlen(dest);
+	dest_len = ft_strlen(dest) - 1;
 	i = 0;
 	while (i < dest_len)
 	{
