@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alemarch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/14 12:54:00 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/16 17:28:27 by alemarch         ###   ########.fr       */
+/*   Created: 2021/10/15 09:18:21 by alemarch          #+#    #+#             */
+/*   Updated: 2021/10/16 21:20:11 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_strlen(char *str)
 {
+	int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
+
+unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+	int				src_len;
 	unsigned int	i;
 
-	i = 0;
-	while (i < n && src[i] != '\0')
+	src_len = ft_strlen(src);
+	while (src[i] != '\0' && i < size)
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
+	while (i < size)
+	{
 		dest[i] = '\0';
-	return (dest);
+	}
+	return (src_len);
 }
