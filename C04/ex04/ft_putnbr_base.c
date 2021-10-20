@@ -6,7 +6,7 @@
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 19:54:58 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/17 12:39:38 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/19 17:29:31 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ void	ft_putchar(char c)
 
 int	ft_strlen(char *str)
 {
-	int	i = 0;
+	int	i;
 
+	i = 0;
 	while (str[i])
 		i++;
 	return (i);
@@ -32,7 +33,7 @@ int	ft_is_valid(char *str)
 	int	j;
 
 	i = 0;
-	j = 1;
+	j = 0;
 	if (!str[i])
 		return (0);
 	if (str[0] == '1' && !str[1])
@@ -41,6 +42,7 @@ int	ft_is_valid(char *str)
 	{
 		if (str[i] == '-' || str[i] == '+')
 			return (0);
+		j = i + 1;
 		while (str[j])
 		{
 			if (str[j] == str[i])
@@ -55,7 +57,9 @@ int	ft_is_valid(char *str)
 void	ft_putnbr_base(int nbr, char *base)
 {
 	unsigned int	n;
+	unsigned int	base_len;
 
+	base_len = ft_strlen(base);
 	if (ft_is_valid(base))
 	{
 		if (nbr < 0)
@@ -65,8 +69,8 @@ void	ft_putnbr_base(int nbr, char *base)
 		}
 		else
 			n = nbr;
-		if (n > 9)
-			ft_putnbr_base(n / ft_strlen(base), base);
-		ft_putchar(base[n % ft_strlen(base)]);
+		if (n >= base_len)
+			ft_putnbr_base(n / base_len, base);
+		ft_putchar(base[n % base_len]);
 	}
 }

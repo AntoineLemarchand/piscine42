@@ -6,7 +6,7 @@
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 15:28:24 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/16 15:42:05 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/20 14:27:25 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_putchar(char c)
 
 void	ft_putstr(char *str)
 {
-	while (*str++)
-		ft_putchar(*str);
+	while (*str)
+		ft_putchar(*str++);
 }
