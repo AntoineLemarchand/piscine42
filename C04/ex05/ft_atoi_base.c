@@ -6,11 +6,21 @@
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 12:43:07 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/17 13:58:51 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/20 08:50:39 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_is_negative(char *str)
+int ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+		i++;
+	return (i);
+}
+
+int	ft_is_neg(char *str)
 {
 	int	i;
 	int	sign;
@@ -25,7 +35,7 @@ int	ft_is_negative(char *str)
 		}
 		i++;
 	}
-	return (i % 2);
+	return (sign % 2);
 }
 
 int	ft_is_valid(char *str)
@@ -43,6 +53,7 @@ int	ft_is_valid(char *str)
 	{
 		if (str[i] == '-' || str[i] == '+')
 			return (0);
+		j = i + 1;
 		while (str[j])
 		{
 			if (str[j] == str[i])
@@ -54,24 +65,35 @@ int	ft_is_valid(char *str)
 	return (1);
 }
 
-int ft_atoi_base(char *str, char *base)
+int	ft_change_base(char *str, char *base)
 {
-	int				i;
-	unsigned int	out;
+	int	base_len;
+	int	i;
+	int out;
 
-	i = 0;
+	base_len = ft_strlen(base);
 	out = 0;
+	i = 0;
+	while (i < base_len - 1)
+	{
+		base[i] = (i + 48);
+		i++;
+	}
+	i = 0;
+	while (str[i] != '\0')
+	{
+		out = out * 10 + 
+	}
+}
+
+int	ft_atoi_base(char *str, char *base)
+{
 	if (ft_is_valid(base))
 	{
-		while (str[i] < '0' || str[i] > '9')
-			i++;
-		while (str[i] >= '0' && str[i] <= '9')
-		{
-			out = ((out * 10) + (str[i] - 48);
-			i++;
-		}
-		if (ft_is_negative(str))
-			out *= -1;
+		int i;
+
+		i = 0;
+		out = out * ft_strlen(base) + 
 	}
-	return (out);
+	return (0);
 }

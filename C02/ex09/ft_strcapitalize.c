@@ -6,7 +6,7 @@
 /*   By: alemarch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 21:29:57 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/16 13:03:35 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/16 11:43:02 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ char	*ft_strcapitalize(char *str)
 		str[0] -= 32;
 	while (str[i] != '\0')
 	{
-		if (ft_isup(str[i]))
-		{
-			str[i] += 32;
-		}
 		if (!(ft_isdigit(str[i - 1])))
 		{
 			if (!(ft_islow(str[i - 1])))

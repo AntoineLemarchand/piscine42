@@ -6,7 +6,7 @@
 /*   By: alemarch <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:47:31 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/17 19:46:43 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/14 18:43:47 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@ int	ft_str_is_lowercase(char *str)
 {
 	int	i;
 
-	i = 0;
+	if (str[i] == '\0')
+		return (1);
 	while (str[i] != '\0')
 	{
 		if (str[i] < 'a' || str[i] > 'z')

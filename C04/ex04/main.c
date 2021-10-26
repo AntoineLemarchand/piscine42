@@ -7,6 +7,7 @@ int main()
 	int i1 = 42;
 	int int_max = 2147483647;
 	int int_min = -2147483648;
+	int rigolo = 8233543;
 
 	printf("_______ TESTS DE BASES _______\n\n");
 	ft_putnbr_base(i1, "10-");
@@ -14,6 +15,8 @@ int main()
 	ft_putnbr_base(i1, "");
 	printf(" should be nothing (invalid base)\n");
 	ft_putnbr_base(i1, "1");
+	printf(" should be nothing (invalid base)\n");
+	ft_putnbr_base(i1, "12234");
 	printf(" should be nothing (invalid base)\n\n");
 
 	printf("___ AFFICHAGES DE CHIFFRES ___\n\n");
@@ -32,11 +35,16 @@ int main()
 	ft_putnbr_base(-i1, "01");
 	printf(" should be -101010\n\n");
 	ft_putnbr_base(int_max, "01");
-	printf(" should be 1111111111111111111111111111111\n\n");
+	printf(" should be \n1111111111111111111111111111111\n\n");
 	ft_putnbr_base(int_min, "01");
-	printf(" should be -10000000000000000000000000000000\n\n");
+	printf(" should be \n-10000000000000000000000000000000\n\n");
 	ft_putnbr_base(int_max, "abcdefghijklmnopqrstuvwxyz");
 	printf(" should be gytisyx\n\n");
+	ft_putnbr_base(rigolo, "abcdefghijklmnopqrstuvwxyz");
+
+
+	printf("_____ DIVERS _____\n\n");
+	ft_putnbr_base(int_min, "01\t42");
 
 	return (0);
 }

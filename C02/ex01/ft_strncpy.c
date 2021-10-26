@@ -6,7 +6,7 @@
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 12:54:00 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/17 13:34:50 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/16 13:46:35 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	while (i < n)
-	{
-		dest[i] = '\0';
-		i++;
-	}
+	dest[i] = '\0';
 	return (dest);
 }

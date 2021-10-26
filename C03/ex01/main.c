@@ -7,7 +7,7 @@ int main()
 {
 	char *a = "dapdiadjojofpojf";
 	char *b = "dapdiaejojofpojf";
-	char *c = "dap0iaejojofpojf";
+	char *c = "dapdi0ejojofpojf";
 
 	printf("%i  |  %i\n", strncmp(a,b,8), ft_strncmp(a,b,8));
 	printf("%i  |  %i\n", strncmp(a,b,3), ft_strncmp(a,b,3));
