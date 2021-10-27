@@ -6,19 +6,20 @@ NAME	= libft.a
 
 RM		= rm -f
 
-CC		= gcc -c
+CC		= gcc
 
 CFLAGS	= -Wall -Wextra -Werror
 
+.c.o:
+			${CC} ${CFLAGS} -I includes -c $< -o ${<:.c=.o}
+
 ${NAME}:	${OBJS}
-			${CC} ${CFLAGS} ${SRCS} -I ./includes $<-o ${<:.c=.o}
-			ar rc ${NAME} ${OBJS}
-			ranlib ${NAME}
+			ar rcs ${NAME} ${OBJS}
 
 all:		${NAME}
 
 clean:	
-			rm ${OBJS}
+			${RM} ${OBJS}
 
 fclean:		clean
 			${RM} ${NAME}
