@@ -13,3 +13,5 @@ They are not fully accurate for the files in this repo
 | C05 | 73% |
 | C06 | 73% |
 | C08 | 100% |
+| RUSH00 | 116% |
+| RUSH01 | 105% |
