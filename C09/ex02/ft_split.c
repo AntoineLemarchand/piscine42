@@ -6,7 +6,7 @@
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 20:46:59 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/27 15:12:55 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/27 18:13:56 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ char	**ft_split(char *str, char *charset)
 	i = 0;
 	size = ft_count_words(str, charset);
 	arr = malloc((size + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
 	while (*str != '\0')
 	{
 		if (ft_is_charset(*str, charset) || i == 0)
@@ -89,10 +91,7 @@ char	**ft_split(char *str, char *charset)
 			while (ft_is_charset(*str, charset))
 				str++;
 			if (*str != '\0' && i < size)
-			{
-				arr[i] = ft_strdup(str, charset);
-				i++;
-			}
+				arr[i++] = ft_strdup(str, charset);
 		}
 		str++;
 	}
