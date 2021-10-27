@@ -12,3 +12,4 @@ They are not fully accurate for the files in this repo
 | C04 | 85% |
 | C05 | 73% |
 | C06 | 73% |
+| C08 | 100% |

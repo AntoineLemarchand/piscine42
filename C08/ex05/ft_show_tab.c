@@ -6,7 +6,7 @@
 /*   By: alemarch <alemarch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 15:40:23 by alemarch          #+#    #+#             */
-/*   Updated: 2021/10/25 16:36:42 by alemarch         ###   ########.fr       */
+/*   Updated: 2021/10/26 18:11:01 by alemarch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putnbr(int nb)
 	ft_putchar(nb % 10 + 48);
 }
 
-void ft_show_tab(struct s_stock_str *par)
+void	ft_show_tab(struct s_stock_str *par)
 {
 	while (par->str)
 	{

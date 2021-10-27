@@ -10,8 +10,8 @@ CC		= gcc -c
 
 CFLAGS	= -Wall -Wextra -Werror
 
-${NAME}: 	${OBJS}
-			${CC} ${CFLAGS} ${SRCS} -I ./includes
+${NAME}:	${OBJS}
+			${CC} ${CFLAGS} ${SRCS} -I ./includes $<-o ${<:.c=.o}
 			ar rc ${NAME} ${OBJS}
 			ranlib ${NAME}
 
